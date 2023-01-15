@@ -27,9 +27,6 @@ int lengthoflastword(char *s)
 int main()
 {
     char s[]="hello ";
-    //printf("strlen=%d\n",strlen(s));
-    //printf("s[final]=%c\n",s[11]);
-    //printf("sizeof=%d\n",sizeof(s));
     int ans=lengthoflastword(s);
     printf("ans=%d\n",ans);
 }
