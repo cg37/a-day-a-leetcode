@@ -3,29 +3,33 @@
 
 int lengthoflastword(char *s)
 {
-    int top=strlen(s)-1;
-    int length=0;
-    if(top==0)
+    int n=strlen(s);
+    //char *p=s;
+    int k=0;
+    if(n==1)
     {
         return 1;
     }
-        
-    while(s[top]==' ')
+    for (int i=n-1;i>=0;i--)
     {
-        top--;
+        if(*(s+i)!=' ')
+        {
+            k++;
+        }
+        else if(k>0 && *(s+i)==' ')
+        {
+            break;
+        }
     }
-    while(top>0 && s[top]!=' ')
-    {
-        top--;
-        length++;
-    }
-    return length;  
+    return k;
+ 
 }
 int main()
 {
-    char s[]="hello world";
-    printf("strlen=%d\n",strlen(s));
-    printf("sizeof=%d\n",sizeof(s));
+    char s[]="hello ";
+    //printf("strlen=%d\n",strlen(s));
+    //printf("s[final]=%c\n",s[11]);
+    //printf("sizeof=%d\n",sizeof(s));
     int ans=lengthoflastword(s);
     printf("ans=%d\n",ans);
 }
