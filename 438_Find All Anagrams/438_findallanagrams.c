@@ -38,10 +38,9 @@ int *findAnagrams(char * s, char * p, int* returnSize)
 
     int pFreq[26];
     memset(pFreq,0,sizeof(pFreq));
-    
+
     CharFreq(p,0,len_p-1,pFreq);
     int sFreq[26];
-    //memset(sFreq,0,sizeof(sFreq));
     for(int i=0;i<len_s-len_p+1;i++)
     {
         memset(sFreq,0,sizeof(sFreq));
