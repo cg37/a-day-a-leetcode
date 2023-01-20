@@ -18,7 +18,7 @@ bool validPalindrome(char * s)
 {
     int i;
     int j = strlen(s)-1;
-    for(i=0; i<j;++i,--j)
+    for(i=0; i<j;i++,j--)
     {
         if(s[i] != s[j])
         {
@@ -27,11 +27,10 @@ bool validPalindrome(char * s)
     }
     return true;
 }
-
 int main()
 {
-    char s[]="abad";
+    char s[]="abadabac";
     bool ans=validPalindrome(s);
     ans?printf("true"):printf("false");
     return 0;
-    }
+}
