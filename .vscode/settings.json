@@ -4,6 +4,10 @@
         "ctype.h": "c",
         "math.h": "c",
         "stdio.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "xstring": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "vector": "cpp"
     }
 }

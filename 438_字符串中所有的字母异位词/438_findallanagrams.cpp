@@ -2,6 +2,10 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <iostream>
+#include <vector>
+#include <string>
+
 
 void CharFreq(char *s,int left,int right,int *freq)//字段s中各个字母出现的次数
 {
@@ -70,3 +74,28 @@ int main()
     return 0;
 }
 
+class Solution {
+public:
+    std::vector<int> findAnagrams(std::string s, std::string p) {
+        std::vector<int> ans;
+        if (s.size()<p.size()) {
+            return ans;
+        }
+        std::vector<int> freq(26);
+        for(int i=0;i<p.size();i++) {
+            freq[p[i] - 'a']++;
+        }
+        std::vector<int> cur(26);
+        for(int i = 0; i < p.size();i++) {
+            cur[s[i] - 'a'] ++;
+        }
+        for(int left = 0, right = p.size()-1; right < s.size(); right++, left++) {
+            cur[s[right]-'a']++;
+            if(cur == freq) {
+                ans.push_back(left);
+            }
+            cur[s[left]-'a']--;
+        }
+        return ans;
+    }
+};
