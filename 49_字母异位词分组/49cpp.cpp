@@ -3,6 +3,7 @@
 #include <string>
 #include <unordered_map>
 #include <algorithm>
+#include <stack>
 using namespace std;
 /*
 给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。
@@ -21,5 +22,11 @@ public:
         for(auto i = record.begin();i!=record.end();i++) {
             ans.push_back(i->second);
         }
+    }
+};
+class Solution {
+public:
+    vector<int> dailyTemperatures(vector<int>& temperatures) {
+        stack<int> st;
     }
 };
