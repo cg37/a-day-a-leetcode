@@ -28,5 +28,11 @@ class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
         stack<int> st;
+        int len = temperatures.size();
+        vector<int> ans(len-1, -1);
+        if(len == 0) {
+            return ans;
+        }
+        unordered_map<int,int> umap;
     }
 };
